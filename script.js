@@ -1,31 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Memastikan Ikon Lucide Render
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    lucide.createIcons();
 
-    // Efek Muncul Berurutan (Staggered Animation)
+    // Scroll Reveal with Staggered Effect
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 150); // Delay antar section
+                entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-    });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Navigasi Smooth dengan Jeda Jarak
+    // Smooth Navigation with Offset
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
             window.scrollTo({
-                top: target.offsetTop - 50,
+                top: targetElement.offsetTop - 50,
                 behavior: 'smooth'
             });
         });
