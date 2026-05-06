@@ -1,130 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Porto</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!doctype html>
 <html lang="id" class="h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Afif - Senior Video Editor & Visual Storyteller</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Muhammad Afif - Video Editor & Visual Storyteller</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --cyan: #00F2FE;
       --violet: #7c3aed;
       --bg-dark: #07070c;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --accent-coral: #e2725b;
     }
-
-    * { 
-      font-family: 'Sora', sans-serif;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: #f5f5f7;
-      overflow-x: hidden;
-    }
-
-    /* Background Liquid Animation */
+    * { font-family: 'Sora', sans-serif; scroll-behavior: smooth; }
+    body { background-color: var(--bg-dark); color: #f5f5f7; overflow-x: hidden; }
+    
     .liquid-bg {
-      position: fixed;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 15% 30%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 85% 70%, rgba(226, 114, 91, 0.08) 0%, transparent 50%);
+      position: fixed; inset: 0;
+      background: radial-gradient(circle at 15% 30%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 85% 70%, rgba(0, 242, 254, 0.08) 0%, transparent 50%);
       z-index: -1;
-      animation: pulse 15s ease-in-out infinite alternate;
     }
 
-    @keyframes pulse {
-      0% { opacity: 0.5; transform: scale(1); }
-      100% { opacity: 1; transform: scale(1.1); }
-    }
-
-    /* Glassmorphism */
     .glass {
-      background: var(--card-bg);
+      background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 24px;
     }
 
-    /* Hero Text Gradient */
     .gradient-text {
       background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Bento Grid */
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .bento-item {
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bento-item:hover {
-      transform: translateY(-10px);
-      border-color: var(--cyan);
-      box-shadow: 0 20px 40px rgba(0, 242, 254, 0.15);
-    }
-
-    /* Timeline Custom */
-    .timeline-border {
-      border-left: 2px solid rgba(124, 58, 237, 0.3);
-    }
-
     .skill-badge {
       background: rgba(124, 58, 237, 0.1);
       border: 1px solid rgba(124, 58, 237, 0.3);
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 99px;
-      font-size: 0.8rem;
-      transition: 0.3s;
+      font-size: 0.75rem;
     }
 
-    .skill-badge:hover {
-      background: var(--violet);
-      color: white;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg-dark); }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--violet); }
+    .timeline-border { border-left: 2px solid rgba(124, 58, 237, 0.3); }
   </style>
 </head>
+
 <body class="h-full">
   <div class="liquid-bg"></div>
 
-  <!-- Navbar -->
   <nav class="fixed top-0 w-full z-50 px-6 py-4">
     <div class="max-w-6xl mx-auto glass flex items-center justify-between px-8 py-3">
-      <span class="text-xl font-extrabold tracking-tighter text-white">AFIF<span class="text-violet-500">.</span></span>
-      <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+      <span class="text-xl font-extrabold tracking-tighter">AFIF<span class="text-violet-500">.</span></span>
+      <div class="hidden md:flex gap-8 text-xs font-medium text-gray-400 uppercase tracking-widest">
         <a href="#home" class="hover:text-white transition">Home</a>
-        <a href="#about" class="hover:text-white transition">About</a>
         <a href="#work" class="hover:text-white transition">Works</a>
         <a href="#experience" class="hover:text-white transition">Experience</a>
         <a href="#rate-card" class="hover:text-white transition">Rate Card</a>
@@ -134,9 +67,9 @@
   </nav>
 
   <main class="pt-32 pb-20 px-6">
-    <!-- Hero Section -->
+    
     <section id="home" class="max-w-6xl mx-auto text-center mb-32">
-      <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 glass text-xs font-bold text-cyan-400 uppercase tracking-widest">
+      <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 glass text-[10px] font-bold text-cyan-400 uppercase tracking-widest">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
@@ -146,205 +79,140 @@
       <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter leading-none">
         EDIT. <span class="gradient-text">ELEVATE.</span><br>REPEAT.
       </h1>
-      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-        I don't just cut clips—I craft cinematic stories and high-retention content that captivates audiences.
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10 font-light">
+        Crafting cinematic stories and high-retention content that captivates audiences.
       </p>
-      <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-        <a href="#work" class="bg-violet-600 hover:bg-violet-700 text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-violet-500/20 transition-all transform hover:-translate-y-1">Explore Portfolio</a>
-        <a href="#contact" class="glass px-10 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all">Let's Talk</a>
+      <div class="flex gap-4 justify-center">
+        <a href="#work" class="bg-violet-600 hover:bg-violet-700 text-white px-8 py-4 rounded-2xl font-bold transition-all">Explore Works</a>
+        <a href="#contact" class="glass px-8 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all">Let's Talk</a>
       </div>
     </section>
 
-    <!-- About & Summary -->
-    <section id="about" class="max-w-4xl mx-auto mb-32">
-      <div class="glass p-8 md:p-12">
-        <div class="flex items-center gap-4 mb-6">
-          <i data-lucide="user" class="text-violet-500"></i>
-          <h2 class="text-xl font-bold uppercase tracking-widest text-gray-500">About Me</h2>
-        </div>
-        <p class="text-xl md:text-2xl text-gray-200 leading-snug mb-8 font-medium">
-          "Seorang creative professional yang terobsesi dengan storytelling visual. Dari dokumenter Umroh yang menyentuh hingga konten Reels berenergi tinggi."
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-400">
-          <p>Berpengalaman bertahun-tahun dalam mengolah footage mentah menjadi karya seni digital menggunakan **DaVinci Resolve** dan **CapCut**. Fokus saya adalah efisiensi alur kerja tanpa mengorbankan estetika visual.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-badge">Color Grading</span>
-            <span class="skill-badge">Motion Graphics</span>
-            <span class="skill-badge">Cinematic Editing</span>
-            <span class="skill-badge">Sound Design</span>
-            <span class="skill-badge">Log Workflow</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bento Portfolio -->
     <section id="work" class="max-w-6xl mx-auto mb-32">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Niche Mastery</h2>
-        <p class="text-gray-500">Visual storytelling across multiple industries.</p>
+        <h2 class="text-4xl font-bold mb-4">Niche <span class="gradient-text">Mastery</span></h2>
+        <p class="text-gray-500">Focused visual storytelling for various industries.</p>
       </div>
 
-      <div class="bento-grid">
-        <!-- Large Card -->
-        <!-- Video Preview Item -->
-<div class="bento-item glass md:col-span-2 overflow-hidden relative group">
-  <!-- Video Tag -->
-  <video 
-    autoplay 
-    loop 
-    muted 
-    playsinline 
-    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-  >
-    <source src="https://res.cloudinary.com/de2tlhnd6/video/upload/f_auto,q_auto/v1778043163/maharani_hmioqh.mp4" type="video/mp4">
-  </video>
-
-  <!-- Overlay Text (Akan muncul di atas video) -->
-  <div class="relative z-10 p-8 h-full flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
-    <div class="card-label !text-white">Featured Project</div>
-    <h3 class="text-2xl font-bold text-white mb-1">Maharani - Cinematic Edit</h3>
-    <p class="text-gray-300 text-xs">Color Graded in Capcut • 4K Storytelling</p>
-  </div>
-</div>
-       
-        <div class="bento-item glass p-8 md:col-span-2 md:row-span-2 min-h-[400px] flex flex-col justify-end group">
-          <div class="absolute top-8 right-8 text-4xl opacity-20 group-hover:opacity-100 transition">🎬</div>
-          <h3 class="text-2xl font-bold mb-2">Cinematic Umroh</h3>
-          <p class="text-gray-400 text-sm">Menyusun footage menjadi cerita yang informatif dan emosional untuk perjalanan spiritual.</p>
-          <div class="mt-4 flex gap-2">
-             <span class="text-[10px] border border-violet-500/50 px-2 py-1 rounded text-violet-400 uppercase">DaVinci Resolve</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass md:col-span-2 overflow-hidden relative group min-h-[350px]">
+          <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity">
+            <source src="https://res.cloudinary.com/de2tlhnd6/video/upload/f_auto,q_auto/v1778043163/maharani_hmioqh.mp4" type="video/mp4">
+          </video>
+          <div class="relative z-10 p-8 h-full flex flex-col justify-end bg-gradient-to-t from-black/90 to-transparent">
+            <span class="text-[10px] bg-cyan-500 text-black font-bold px-2 py-1 rounded mb-2 w-fit uppercase">Featured Project</span>
+            <h3 class="text-2xl font-bold text-white mb-1">Maharani - Cinematic Edit</h3>
+            <p class="text-gray-300 text-xs tracking-widest uppercase">DaVinci Resolve • 4K Storytelling</p>
           </div>
         </div>
 
-        <div class="bento-item glass p-8 min-h-[250px] flex flex-col justify-end group">
-          <div class="absolute top-6 right-6 text-2xl opacity-20 group-hover:opacity-100 transition">📱</div>
-          <h3 class="text-lg font-bold mb-1">Social Media</h3>
-          <p class="text-gray-400 text-xs">High-retention Reels & TikTok content.</p>
+        <div class="glass p-8 flex flex-col justify-center group hover:bg-cyan-500/5 transition-all">
+          <i data-lucide="smartphone" class="w-10 h-10 text-cyan-400 mb-6 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-xl font-bold mb-3">Social Media</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">High-retention Reels & TikTok content designed for viral engagement.</p>
         </div>
 
-        <div class="bento-item glass p-8 min-h-[250px] flex flex-col justify-end group">
-          <div class="absolute top-6 right-6 text-2xl opacity-20 group-hover:opacity-100 transition">🎨</div>
-          <h3 class="text-lg font-bold mb-1">Color Grading</h3>
-          <p class="text-gray-400 text-xs">Transforming Log to Cinematic Look.</p>
+        <div class="glass p-8 group hover:bg-violet-500/5 transition-all">
+          <i data-lucide="palette" class="w-10 h-10 text-violet-400 mb-6 group-hover:scale-110 transition-transform"></i>
+          <h3 class="text-xl font-bold mb-3">Color Grading</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Transforming Log footage into professional cinematic looks.</p>
         </div>
 
-        <div class="bento-item glass p-8 md:col-span-2 min-h-[250px] flex items-center justify-between group">
+        <div class="glass md:col-span-2 p-8 flex items-center gap-8 group">
+          <div class="hidden md:block w-1/3 aspect-video bg-white/5 rounded-xl overflow-hidden relative">
+            <i data-lucide="sparkles" class="absolute inset-0 m-auto w-8 h-8 text-white/20"></i>
+          </div>
           <div>
-            <h3 class="text-xl font-bold mb-1">Documentary Work</h3>
-            <p class="text-gray-400 text-sm">Raw, authentic, and soulful storytelling.</p>
+            <h3 class="text-xl font-bold mb-2">Cinematic Umroh</h3>
+            <p class="text-sm text-gray-500">Creating emotional narratives for spiritual journeys.</p>
           </div>
-          <div class="text-4xl pr-4 opacity-10">📹</div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Timeline -->
     <section id="experience" class="max-w-4xl mx-auto mb-32">
       <h2 class="text-3xl font-bold mb-12 text-center">Professional Journey</h2>
       <div class="space-y-12">
-        <!-- Exp 1 -->
         <div class="relative pl-8 timeline-border">
-          <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-violet-600 shadow-[0_0_15px_rgba(124,58,237,0.5)]"></div>
-          <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-            <h3 class="text-xl font-bold text-white">Content Specialist & Video Editor</h3>
-            <span class="text-xs font-bold text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full mt-2 md:mt-0">JAN - MEI 2026</span>
+          <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-violet-600"></div>
+          <div class="flex flex-col md:flex-row justify-between mb-2">
+            <h3 class="text-xl font-bold">Content Specialist & Video Editor</h3>
+            <span class="text-[10px] font-bold text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full w-fit">2026 - PRESENT</span>
           </div>
-          <p class="text-cyan-400 font-medium mb-4">UMROHMOMENT</p>
-          <ul class="text-gray-400 text-sm space-y-2 leading-relaxed">
-            <li>• Memproduksi konten video perjalanan umroh dengan gaya sinematik dan narasi yang kuat.</li>
-            <li>• Mengoptimalkan fitur CapCut untuk transisi halus dan penyelarasan audio presisi.</li>
-            <li>• Mengelola konten harian dengan alur kerja yang cepat dan efisien.</li>
+          <p class="text-cyan-400 text-sm mb-4 font-bold tracking-widest">UMROHMOMENT</p>
+          <ul class="text-gray-400 text-xs space-y-2 leading-relaxed">
+            <li>• High-end cinematic storytelling for spiritual travel content.</li>
+            <li>• Workflow optimization using CapCut & DaVinci Resolve.</li>
           </ul>
         </div>
-
-        <!-- Exp 2 -->
+        
         <div class="relative pl-8 timeline-border">
           <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-700"></div>
-          <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-            <h3 class="text-xl font-bold text-white">Freelance Videographer & Editor</h3>
-            <span class="text-xs font-bold text-gray-500 bg-gray-500/10 px-3 py-1 rounded-full mt-2 md:mt-0">2024 - SEKARANG</span>
+          <div class="flex flex-col md:flex-row justify-between mb-2">
+            <h3 class="text-xl font-bold">Freelance Videographer</h3>
+            <span class="text-[10px] font-bold text-gray-500 bg-gray-500/10 px-3 py-1 rounded-full w-fit">2024 - PRESENT</span>
           </div>
-          <p class="text-cyan-400 font-medium mb-4">Self-Employed</p>
-          <ul class="text-gray-400 text-sm space-y-2 leading-relaxed">
-            <li>• Menangani project wisuda, wedding, dan video promosi brand.</li>
-            <li>• Menggunakan Adobe Suite & DaVinci Resolve untuk hasil kualitas tinggi.</li>
-          </ul>
+          <p class="text-cyan-400 text-sm mb-4 font-bold tracking-widest">SELF-EMPLOYED</p>
+          <p class="text-gray-400 text-xs leading-relaxed">Handling wedding, graduation, and brand promotion projects.</p>
         </div>
       </div>
     </section>
-    <section id="rate-card" class="max-w-6xl mx-auto mb-32 px-6">
-    <div class="text-center mb-16">
+
+    <section id="rate-card" class="max-w-6xl mx-auto mb-32">
+      <div class="text-center mb-16">
         <h2 class="text-4xl font-bold mb-4">Transparent <span class="gradient-text">Rate Card</span></h2>
-        <p class="text-gray-500">Pilih paket yang sesuai dengan skala produksi Anda.</p>
-    </div>
+        <p class="text-gray-500">Choose the right package for your production scale.</p>
+      </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass p-8 border-white/5 hover:border-cyan-500/30 transition-all flex flex-col group">
-            <h3 class="text-xl font-bold mb-2">Short-Form</h3>
-            <p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Reels / TikTok / Shorts</p>
-            <div class="text-3xl font-black mb-6">Rp 350rb<span class="text-sm text-gray-500 font-normal">/video</span></div>
-            <ul class="text-sm text-gray-400 space-y-4 mb-8 flex-grow">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Durasi up to 60 detik</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Dynamic Captions</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Sound Design & Music</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> 2x Revisi</li>
-            </ul>
-            <a href="#contact" class="w-full py-3 glass text-center text-sm font-bold hover:bg-cyan-500 hover:text-black transition-all">Pilih Paket</a>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass p-8 border-white/5 flex flex-col hover:border-cyan-500/30 transition-all">
+          <h3 class="text-lg font-bold mb-2">Short-Form</h3>
+          <div class="text-2xl font-black mb-6">Rp 350rb<span class="text-[10px] text-gray-500 font-normal"> /video</span></div>
+          <ul class="text-xs text-gray-400 space-y-4 flex-grow mb-8">
+            <li>✓ Up to 60 seconds</li>
+            <li>✓ Dynamic Captions</li>
+            <li>✓ Sound Design & Music</li>
+          </ul>
+          <a href="#contact" class="w-full py-3 glass text-center text-[10px] font-bold hover:bg-cyan-500 hover:text-black transition-all uppercase tracking-widest">Select Plan</a>
         </div>
 
-        <div class="glass p-8 border-violet-500/50 scale-105 shadow-2xl shadow-violet-500/10 flex flex-col relative overflow-hidden">
-            <div class="absolute top-0 right-0 bg-violet-600 text-[10px] font-bold px-4 py-1 rounded-bl-xl uppercase">Most Popular</div>
-            <h3 class="text-xl font-bold mb-2">Cinematic Story</h3>
-            <p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Umroh / Travel / Event</p>
-            <div class="text-3xl font-black mb-6 text-violet-400">Rp 1.5jt<span class="text-sm text-gray-500 font-normal">/project</span></div>
-            <ul class="text-sm text-gray-400 space-y-4 mb-8 flex-grow">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-violet-400"></i> Durasi 3-5 Menit</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-violet-400"></i> Advanced Color Grading</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-violet-400"></i> Cinematic Soundscapes</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-violet-400"></i> Storytelling Narrative</li>
-            </ul>
-            <a href="#contact" class="w-full py-3 bg-violet-600 text-center text-sm font-bold rounded-xl hover:bg-violet-700 transition-all">Hubungi Sekarang</a>
+        <div class="glass p-8 border-violet-500/50 scale-105 shadow-2xl shadow-violet-500/10 flex flex-col relative overflow-hidden bg-violet-600/5">
+          <div class="absolute top-0 right-0 bg-violet-600 text-[8px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-tighter">Most Popular</div>
+          <h3 class="text-lg font-bold mb-2">Cinematic Story</h3>
+          <div class="text-2xl font-black mb-6 text-violet-400">Rp 1.5jt<span class="text-[10px] text-gray-500 font-normal"> /project</span></div>
+          <ul class="text-xs text-gray-300 space-y-4 flex-grow mb-8">
+            <li>✓ 3-5 Minutes duration</li>
+            <li>✓ Advanced Color Grading</li>
+            <li>✓ Storytelling Narrative</li>
+          </ul>
+          <a href="#contact" class="w-full py-3 bg-violet-600 text-center text-[10px] font-bold rounded-xl hover:bg-violet-700 transition-all uppercase tracking-widest">Hire Now</a>
         </div>
 
-        <div class="glass p-8 border-white/5 hover:border-orange-500/30 transition-all flex flex-col">
-            <h3 class="text-xl font-bold mb-2">Documentary</h3>
-            <p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Corporate / Brand Story</p>
-            <div class="text-3xl font-black mb-6">Custom</div>
-            <ul class="text-sm text-gray-400 space-y-4 mb-8 flex-grow">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i> Full Production Planning</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i> Motion Graphics Elements</li>
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i> Unlimited Consultation</li>
-            </ul>
-            <a href="#contact" class="w-full py-3 glass text-center text-sm font-bold hover:bg-white/10 transition-all">Diskusi Project</a>
+        <div class="glass p-8 border-white/5 flex flex-col hover:border-orange-500/30 transition-all">
+          <h3 class="text-lg font-bold mb-2">Documentary</h3>
+          <div class="text-2xl font-black mb-6">Custom</div>
+          <ul class="text-xs text-gray-400 space-y-4 flex-grow mb-8">
+            <li>✓ Full Production Planning</li>
+            <li>✓ Motion Graphics</li>
+            <li>✓ Unlimited Consultation</li>
+          </ul>
+          <a href="#contact" class="w-full py-3 glass text-center text-[10px] font-bold hover:bg-white/10 transition-all uppercase tracking-widest">Discuss Project</a>
         </div>
-    </div>
-</section>
-    <!-- Contact Section -->
+      </div>
+    </section>
+
     <section id="contact" class="max-w-4xl mx-auto">
       <div class="glass p-12 text-center border-violet-500/30">
-        <h2 class="text-4xl font-black mb-4">READY TO SCALE?</h2>
-        <p class="text-gray-400 mb-10 max-w-md mx-auto">Mari berkolaborasi untuk menciptakan visual yang tak terlupakan.</p>
+        <h2 class="text-4xl font-black mb-4 uppercase tracking-tighter">Ready to Scale?</h2>
+        <p class="text-gray-400 mb-10 max-w-xs mx-auto text-sm leading-relaxed">Let's collaborate to create unforgettable visual impact.</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div class="p-6 glass hover:border-cyan-500/50 transition">
-            <i data-lucide="mail" class="mx-auto mb-3 text-cyan-400"></i>
-            <p class="text-xs text-gray-500 uppercase">Email</p>
-            <p class="text-sm font-bold">afifm192@gmail.com</p>
-          </div>
-          <div class="p-6 glass hover:border-violet-500/50 transition">
-            <i data-lucide="instagram" class="mx-auto mb-3 text-violet-400"></i>
-            <p class="text-xs text-gray-500 uppercase">Instagram</p>
-            <p class="text-sm font-bold">@afif.visuals</p>
-          </div>
-          <div class="p-6 glass hover:border-orange-500/50 transition">
-            <i data-lucide="map-pin" class="mx-auto mb-3 text-orange-400"></i>
-            <p class="text-xs text-gray-500 uppercase">Location</p>
-            <p class="text-sm font-bold">Cikarang, Indonesia</p>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 text-[10px]">
+          <div class="p-4 glass"><i data-lucide="mail" class="w-4 h-4 mx-auto mb-2 text-cyan-400"></i>afifm192@gmail.com</div>
+          <div class="p-4 glass"><i data-lucide="instagram" class="w-4 h-4 mx-auto mb-2 text-violet-400"></i>@afif.visuals</div>
+          <div class="p-4 glass"><i data-lucide="map-pin" class="w-4 h-4 mx-auto mb-2 text-orange-400"></i>Cikarang, ID</div>
         </div>
 
-        <a href="mailto:afifm192@gmail.com" class="inline-block bg-white text-black px-12 py-4 rounded-2xl font-black hover:bg-cyan-400 transition-all tracking-tighter">
+        <a href="mailto:afifm192@gmail.com" class="inline-block bg-white text-black px-12 py-4 rounded-2xl font-black hover:bg-cyan-400 transition-all tracking-tighter text-sm">
           START A PROJECT
         </a>
       </div>
@@ -352,33 +220,25 @@
   </main>
 
   <footer class="py-10 text-center border-t border-white/5">
-    <p class="text-gray-600 text-xs font-medium uppercase tracking-[0.3em]">© 2026 MUHAMMAD AFIF • DESIGNED FOR IMPACT</p>
+    <p class="text-gray-600 text-[10px] font-medium uppercase tracking-[0.3em]">© 2026 MUHAMMAD AFIF • DESIGNED FOR IMPACT</p>
   </footer>
 
   <script>
     lucide.createIcons();
     
-    // Simple reveal animation on scroll
-    const observerOptions = { threshold: 0.1 };
+    // Animation observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100');
-          entry.target.style.transform = "translateY(0)";
+          entry.target.classList.add('opacity-100', 'translate-y-0');
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('section').forEach(section => {
-      section.classList.add('opacity-0', 'transition-all', 'duration-1000', 'translate-y-10');
+      section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-1000');
       observer.observe(section);
     });
   </script>
 </body>
-</html>
-    </section>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
