@@ -1,28 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    // Render Icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 
-    // Scroll Reveal with Staggered Effect
+    // Intersection Observer untuk animasi muncul
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Terapkan pada semua section dan item timeline
+    document.querySelectorAll('section, .timeline-item').forEach((el) => {
+        observer.observe(el);
+    });
 
-    // Smooth Navigation with Offset
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
+    // Smooth Scroll Navigation
+    document.querySelectorAll('.nav-link, a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - 50,
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 50,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
