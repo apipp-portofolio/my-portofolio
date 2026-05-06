@@ -8,7 +8,6 @@
 * { font-family: 'Sora', sans-serif; scroll-behavior: smooth; box-sizing: border-box; }
 body { background-color: var(--bg-dark); color: #f5f5f7; overflow-x: hidden; margin: 0; }
 
-/* Liquid Background Animasi */
 .liquid-bg {
   position: fixed; inset: 0;
   background: 
@@ -30,18 +29,16 @@ body { background-color: var(--bg-dark); color: #f5f5f7; overflow-x: hidden; mar
   filter: blur(100px); z-index: -1;
 }
 
-/* Base Section Styling */
 section { padding: 150px 0; opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
 section.visible { opacity: 1; transform: translateY(0); }
 
-/* Glassmorphism Premium */
 .glass {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 32px;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s ease;
 }
 
 .glass:hover {
@@ -67,7 +64,7 @@ section.visible { opacity: 1; transform: translateY(0); }
 .skill-badge:hover { background: var(--violet); color: white; transform: translateY(-5px); }
 
 /* --- TIMELINE SECTION (Zig-Zag Style) --- */
-.timeline-section { position: relative; z-index: 10; }
+.timeline-section { position: relative; z-index: 10; padding: 150px 2rem; }
 .timeline-container { max-width: 900px; margin: 0 auto; position: relative; }
 .timeline-title { font-size: 3rem; text-align: center; margin-bottom: 4rem; }
 .timeline { position: relative; padding: 2rem 0; }
