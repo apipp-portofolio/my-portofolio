@@ -1,34 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Render Icons
+    // 1. Render Lucide Icons
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 
-    // Intersection Observer untuk animasi muncul
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+    // 2. Intersection Observer (Scroll Reveal)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                // Memberikan delay sedikit antar elemen (stagger)
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    // Terapkan pada semua section dan item timeline
-    document.querySelectorAll('section, .timeline-item').forEach((el) => {
-        observer.observe(el);
-    });
+    // Targetkan semua section dan item timeline
+    const itemsToReveal = document.querySelectorAll('section, .timeline-item, .reveal');
+    itemsToReveal.forEach(el => revealObserver.observe(el));
 
-    // Smooth Scroll Navigation
-    document.querySelectorAll('.nav-link, a[href^="#"]').forEach(anchor => {
+    // 3. Smooth Navigation Scroll
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
                 window.scrollTo({
-                    top: target.offsetTop - 50,
+                    top: targetElement.offsetTop - 70,
                     behavior: 'smooth'
                 });
             }
         });
+    });
+
+    // 4. Parallax Effect for Glow Spot (Optional)
+    window.addEventListener('mousemove', (e) => {
+        const glow = document.querySelector('.glow-spot');
+        if (glow) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            glow.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
+        }
     });
 });
